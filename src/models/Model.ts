@@ -28,18 +28,9 @@ export class Model<T extends HasId> {
     private sync: Sync<T>
   ) {}
 
-  // Reference Eventing "on" to method
-  get on() {
-    return this.events.on;
-  }
-
-  get trigger() {
-    return this.events.trigger;
-  }
-
-  get get() {
-    return this.attributes.get;
-  }
+  on = this.events.on;
+  trigger = this.events.trigger;
+  get = this.attributes.get;
 
   set(newData: T): void {
     this.attributes.set(newData);
