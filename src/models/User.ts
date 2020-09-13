@@ -31,4 +31,9 @@ export class User {
   get get() {
     return this.attributes.get;
   }
+
+  set(newData: UserProps): void {
+    this.attributes.set(newData);
+    this.events.trigger("change");
+  }
 }
